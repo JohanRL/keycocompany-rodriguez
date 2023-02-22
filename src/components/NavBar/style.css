@@ -35,3 +35,11 @@
 .navLinks li a:hover {
     color: #E12323;
 }
+
+.active {
+    color: #E12323;
+}
+
+.inactive {
+    color: #FFD8E1;
+}

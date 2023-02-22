@@ -1,0 +1,11 @@
+.itemDetail {
+    display: 'flex';
+    justify-content:'center';
+    align-items:'center';
+    padding:'20px';
+    flex-direction:'row';
+}
+
+.counterStyle button {
+    color: #F979AF;
+}

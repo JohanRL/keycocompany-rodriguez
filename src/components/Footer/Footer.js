@@ -1,5 +1,6 @@
 import logo from '../../components/Assets/Logo/logo_keycoco_footer.png';
 
+
 export default function Footer () {
     return (
         <section className="footer">

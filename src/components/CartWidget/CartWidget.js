@@ -1,5 +1,9 @@
+
+
 export default function CartWidget () {
     return (
-        <a href="cart.html"><i>Cart</i></a>
+        <div>
+            <img src="/img/cart_icon.png" alt="cart_icon" width='30px'/>
+        </div>
     )
 }
