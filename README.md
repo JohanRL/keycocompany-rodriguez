@@ -1,4 +1,4 @@
-![](./gifuncionamiento.gif){width='600px'}
+![](./gifuncionamiento.gif)
 
 # KeyCo Company
 
