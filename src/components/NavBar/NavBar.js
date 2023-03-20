@@ -2,9 +2,11 @@ import logo from '../../components/Assets/Logo/logo_keycoco.png';
 import CartWidget from "../CartWidget/CartWidget"
 import { Link, NavLink } from 'react-router-dom';
 
+
 export default function NavBar () {
+    
     return (
-        <section>
+        <div>
             <div>
                 <nav className="navBar">
                     <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to='/'><img src= {logo} alt="logo_keyco"></img></NavLink>
@@ -27,6 +29,6 @@ export default function NavBar () {
                     </ul>
                 </nav>
             </div>
-        </section>
+        </div>
     )
 }

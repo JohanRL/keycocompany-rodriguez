@@ -1,11 +1,42 @@
 .itemDetail {
-    display: 'flex';
-    justify-content:'center';
-    align-items:'center';
-    padding:'20px';
-    flex-direction:'row';
+    display: flex;
+    justify-content:flex-start;
+    padding: 20px 100px;
+    background-color: #FFF4F9;
+}
+
+.itemDetail img {
+    border-radius: 20px;
+    padding-top: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .counterStyle button {
+    font-size: large;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #313131;
+    font-weight: 600;
+    background-color: #FFD8E1;
+    margin: 12px;
+}
+
+.counterStyle button:hover {
+    background-color: #313131;
     color: #F979AF;
+    transition: 0.2s ease;
+}
+
+.descriptionText {
+    display: flex;
+    flex-direction: column;
+    text-orientation: sideways;
+    padding-top: 50px;
+    padding-left: 20px;
 }

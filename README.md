@@ -1,3 +1,9 @@
+![](./gifuncionamiento.gif){width='600px'}
+
+# KeyCo Company
+
+Es un eCommerce de venta de productos relacionados con el mundo de los teclados. En este eCommerce podras encontrar accesorios, teclas y teclados completos donde vas a poder ver al detalle cada uno de estos productos y agregarlos al carrito para finalizar tu compra. En el carrito puedes eliminar uno o todos los productos a la vez.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

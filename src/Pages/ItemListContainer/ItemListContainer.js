@@ -1,34 +1,35 @@
-import { products } from "../../data/products";
+
 import { useEffect, useState } from "react";
 import ItemList from '../../components/ItemList/ItemList'
 import { useParams } from "react-router-dom";
+import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
 
 export default function ItemListContainer ({greeting}) {
     const [productList, setProductList] = useState([])
     const { categoryId } = useParams()
-    console.log(categoryId)
-    const getProducts = new Promise((res, rej) => {
-        if(categoryId) {
-            const filteredProducts = products.filter((item) => item.category === categoryId)
-            setTimeout(() => {
-                res(filteredProducts)
-            }, 2000)
-        } else {
-                setTimeout(() => {
-                res(products)
-            }, 2000)
+
+    const getProducts = () => {
+        const db = getFirestore();
+
+        const queryBase = collection( db, 'products' );
+
+        const querySnapshot = categoryId ? query( queryBase, where('category', '==', categoryId)) : queryBase;
+
+            getDocs(querySnapshot)
+            .then((response) => {
+            const list = response.docs.map((doc) => {
+                return {
+                    id: doc.id, 
+                    ...doc.data()
+                }
+            })
+            setProductList(list)
+            })
+            .catch((error) => console.log(error))
         }
-        
-    })
 
     useEffect(() => {
-        getProducts
-        .then((response) => {
-            setProductList(response)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+        getProducts();
     }, [categoryId])
 
     return (
@@ -37,7 +38,7 @@ export default function ItemListContainer ({greeting}) {
                 <h1>{greeting}</h1>
             </div>
             <div>
-            <ItemList productList={productList}/>
+                <ItemList productList={productList}/>
             </div>
         </section>
     )
